@@ -12,8 +12,7 @@ namespace LoginSystem007
         {
             return BCrypt.Net.BCrypt.HashPassword(plainPassword);
         }
-        public static bool VerifyPassword(string plainPassword, string
-hashedPassword)
+        public static bool VerifyPassword(string plainPassword, string hashedPassword)
         {
             return BCrypt.Net.BCrypt.Verify(plainPassword, hashedPassword);
         }
@@ -29,8 +28,7 @@ hashedPassword)
             bool valid = VerifyPassword(password, user.PasswordHash);
             return valid ? user : null;
         }
-        public static bool RegisterUser(string username, string email, string
-       password, string roleName = "User")
+        public static bool RegisterUser(string username, string email, string password, string roleName = "User")
         {
             using var db = new AppDbContext();
             // Verifica se usuário já existe
