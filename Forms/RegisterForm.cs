@@ -56,5 +56,10 @@ namespace LoginSystem007.Forms
             }
 
         }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

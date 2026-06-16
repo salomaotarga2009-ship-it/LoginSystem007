@@ -31,6 +31,9 @@
             lblWelcome = new Label();
             btnAdminPanel = new Button();
             btnLogout = new Button();
+            btnExcluir = new Button();
+            dgvPainel = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvPainel).BeginInit();
             SuspendLayout();
             // 
             // lblWelcome
@@ -44,7 +47,7 @@
             // 
             // btnAdminPanel
             // 
-            btnAdminPanel.Location = new Point(12, 102);
+            btnAdminPanel.Location = new Point(12, 53);
             btnAdminPanel.Name = "btnAdminPanel";
             btnAdminPanel.Size = new Size(75, 23);
             btnAdminPanel.TabIndex = 1;
@@ -54,7 +57,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(170, 102);
+            btnLogout.Location = new Point(231, 197);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(75, 23);
             btnLogout.TabIndex = 2;
@@ -62,17 +65,39 @@
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
             // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(113, 53);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.TabIndex = 3;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // dgvPainel
+            // 
+            dgvPainel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPainel.Location = new Point(12, 82);
+            dgvPainel.Name = "dgvPainel";
+            dgvPainel.Size = new Size(294, 109);
+            dgvPainel.TabIndex = 4;
+            dgvPainel.CellContentClick += dgvPainel_CellContentClick;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(274, 137);
+            ClientSize = new Size(318, 226);
+            Controls.Add(dgvPainel);
+            Controls.Add(btnExcluir);
             Controls.Add(btnLogout);
             Controls.Add(btnAdminPanel);
             Controls.Add(lblWelcome);
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load_1;
+            ((System.ComponentModel.ISupportInitialize)dgvPainel).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -82,5 +107,7 @@
         private Label lblWelcome;
         private Button btnAdminPanel;
         private Button btnLogout;
+        private Button btnExcluir;
+        private DataGridView dgvPainel;
     }
 }

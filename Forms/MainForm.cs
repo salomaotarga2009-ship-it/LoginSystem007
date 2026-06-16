@@ -1,4 +1,5 @@
 ﻿using LoginSystem007.Models;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +41,43 @@ namespace LoginSystem007.Forms
             {
                 btnAdminPanel.Visible = false;
             }
+            if (AuthService.IsInRole(Session.LoggedUser, "Admin"))
+            {
+                btnExcluir.Visible = true;
+            }
+            else
+            {
+                btnExcluir.Visible = false;
+            }
+            if (AuthService.IsInRole(Session.LoggedUser, "Admin"))
+            {
+                dgvPainel.Visible = true;
+            }
+            else
+            {
+                dgvPainel.Visible = false;
+            }
+        }
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dgvPainel.SelectedRows.Count > 0)
+            {
+                dgvPainel.Rows.Remove(dgvPainel.SelectedRows[0]);
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma linha para excluir.");
+            }
+        }
 
+        private void dgvPainel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SqlConnection con = new SqlConnection("sua_string_de_conexao");
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Usuarios", con);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            dgvPainel.DataSource = dt;
         }
     }
 }
