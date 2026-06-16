@@ -72,6 +72,7 @@
             Controls.Add(lblWelcome);
             Name = "MainForm";
             Text = "MainForm";
+            Load += MainForm_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
