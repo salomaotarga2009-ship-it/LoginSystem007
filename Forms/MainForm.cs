@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginSystem007.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,31 @@ namespace LoginSystem007.Forms
         public MainForm()
         {
             InitializeComponent();
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            lblWelcome.Text = $"Bem-vindo, {Session.LoggedUser.Username}!";
+            if (AuthService.IsInRole(Session.LoggedUser, "Admin"))
+            {
+                btnAdminPanel.Visible = true;
+            }
+            else
+            {
+                btnAdminPanel.Visible = false;
+            }
+        }
+        private void btnAdminPanel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Área administrativa (você pode listar usuários, etc.)");
+            // Abrir um form de administração, etc.
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.LoggedUser = null;
+            this.Close();
+            Application.Restart(); 
+            // Ou reabrir o LoginForm
         }
     }
 }
