@@ -54,7 +54,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(208, 102);
+            btnLogout.Location = new Point(170, 102);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(75, 23);
             btnLogout.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(321, 137);
+            ClientSize = new Size(274, 137);
             Controls.Add(btnLogout);
             Controls.Add(btnAdminPanel);
             Controls.Add(lblWelcome);

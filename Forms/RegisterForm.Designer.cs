@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            linkLabel1 = new LinkLabel();
             btnRegister = new Button();
             txtUsername = new TextBox();
             txtEmail = new TextBox();
@@ -38,17 +37,8 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            cmbRole = new ComboBox();
             SuspendLayout();
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(127, 185);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(60, 15);
-            linkLabel1.TabIndex = 0;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "linkLabel1";
             // 
             // btnRegister
             // 
@@ -124,11 +114,20 @@
             label4.TabIndex = 9;
             label4.Text = "Confirme:";
             // 
+            // cmbRole
+            // 
+            cmbRole.FormattingEnabled = true;
+            cmbRole.Location = new Point(223, 133);
+            cmbRole.Name = "cmbRole";
+            cmbRole.Size = new Size(121, 23);
+            cmbRole.TabIndex = 10;
+            // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(323, 255);
+            ClientSize = new Size(374, 227);
+            Controls.Add(cmbRole);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -138,7 +137,6 @@
             Controls.Add(txtEmail);
             Controls.Add(txtUsername);
             Controls.Add(btnRegister);
-            Controls.Add(linkLabel1);
             Name = "RegisterForm";
             Text = "RegisterForm";
             ResumeLayout(false);
@@ -146,8 +144,6 @@
         }
 
         #endregion
-
-        private LinkLabel linkLabel1;
         private Button btnRegister;
         private TextBox txtUsername;
         private TextBox txtEmail;
@@ -157,5 +153,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private ComboBox cmbRole;
     }
 }
